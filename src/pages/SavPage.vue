@@ -1,7 +1,7 @@
 <template>
     <section>
         <SelectComp @on-select-change="change_value_abonne" label="Intervention chez abonné" :data="data_sav"/>
-        <Signal v-if="valeur_abonne" @on-value="show_pbo_select" />
+        <Signal prefix="-" text="Signal PTO" v-if="valeur_abonne" @on-value="show_pbo_select" />
         <SelectComp @on-select-change="show_intervention_pm" label="Intervention PBO" :data="data_pbo"/>
         <SelectComp @on-select-change="change_value_pm" label="Intervention PM" :data="data_pm"/>
         <Signal @on-value="show_infos" v-if="valeur_pm"/>

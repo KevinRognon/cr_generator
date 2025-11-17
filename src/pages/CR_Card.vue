@@ -27,11 +27,13 @@ import Navbar from '@/components/Navbar.vue';
         
         border-radius: 10px;
         font-size: 1.5em;
+
+        box-shadow: 0px 0px 10px lightgray;
     }
 
     .main_cr > p {
 
-        font-size: 1.8em;
+        font-size: 1em;
         
     }
 

@@ -27,7 +27,7 @@ import CR_Card from '@/pages/CR_Card.vue';
 
     section {
         background-color: #fff;
-        width: 80%;
+        width: 90%;
 
         margin: auto;
         border-radius: 10px;
@@ -66,7 +66,9 @@ import CR_Card from '@/pages/CR_Card.vue';
         
         
         background-color: #f6f8fa;
-        padding: 10px;
+        padding: 30px;
+        padding-inline: 50px;
+        
 
     }
 

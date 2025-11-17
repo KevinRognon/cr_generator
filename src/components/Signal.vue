@@ -1,8 +1,7 @@
 <template>
 
     <form @submit.prevent="" @change="$emit('onValue')">
-        <label for="signal">Signal en dBm</label>
-        <input type="number">
+        <input type="number" :prefix="prefix" :placeholder="text">
     </form>
 
 
@@ -15,10 +14,18 @@
         align-items: center;
 
     }
+
+    form input {
+        padding-inline: 10px;
+        padding-block: 5px;
+    }
 </style>
 
 <script setup>
 
-
+    defineProps({
+        text: String,
+        prefix: String
+    })
 
 </script>

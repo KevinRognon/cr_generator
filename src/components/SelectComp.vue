@@ -15,6 +15,11 @@
         flex-direction: column;
         align-items: center;
     }
+
+    select {
+        padding-inline: 10px;
+        padding-block: 5px;
+    }
 </style>
 
 <script setup>
