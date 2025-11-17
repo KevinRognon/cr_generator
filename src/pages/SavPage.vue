@@ -1,11 +1,9 @@
 <template>
     <section>
-        <h2>Sav</h2>
-        <hr style="width: 100%;">
-        <Select @on-select-change="change_value_abonne" label="Intervention chez abonné" :data="data_sav"/>
+        <SelectComp @on-select-change="change_value_abonne" label="Intervention chez abonné" :data="data_sav"/>
         <Signal v-if="valeur_abonne" @on-value="show_pbo_select" />
-        <Select @on-select-change="show_intervention_pm" label="Intervention PBO" :data="data_pbo"/>
-        <Select @on-select-change="change_value_pm" label="Intervention PM" :data="data_pm"/>
+        <SelectComp @on-select-change="show_intervention_pm" label="Intervention PBO" :data="data_pbo"/>
+        <SelectComp @on-select-change="change_value_pm" label="Intervention PM" :data="data_pm"/>
         <Signal @on-value="show_infos" v-if="valeur_pm"/>
         <Informations @on-submit-infos="infos_submit" v-if="show_info_text" />
         <GenerateButton @on-click="on_generate_clicked" text="Générer" />
@@ -15,7 +13,7 @@
 
 
 <script setup>
-    import Select from '@/components/Select.vue';
+    import SelectComp from '@/components/SelectComp.vue';
     import data_sav from '../assets/data_sav.json';
     import data_pbo from '../assets/data_pbo.json';
     import data_pm from '../assets/data_pm.json';
@@ -69,11 +67,6 @@
     }
 
     const reset_champs = () => {
-        valeur_abonne.value        = false;
-        show_pbo.value             = false;
-        show_pm.value              = false;
-        valeur_pm.value            = false;
-        show_info_text.value       = false;
     }
 
     const change_value_abonne = () => {

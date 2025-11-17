@@ -1,44 +1,25 @@
 <script setup>
+import Card from './components/Card.vue';
 import Navbar from './components/Navbar.vue';
 
 </script>
 
 <template>
-  <Navbar/>
-  <RouterView />
+  <Card></Card>
 </template>
 
 <style>
 
-  body {
-    background-color: #ffedda;
-  }
-
-  * {
-    color: #000000;
-    font-weight: 600;
-    font-family: "Calibri";
-    margin: 0;
+  *, ::before, ::after, html {
     padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box; 
+    font-family: "Calibri";
   }
 
-  select, form input, textarea, button {
-    padding: 15px;
-    width: 320px;
-    text-align: center;
-    border: 5px solid #ffdfdf;
-    border-radius: 10px;
-    font-size: 1.2em;
-    background-color: transparent;
-    resize: none;
+  body {
+    margin: 5%;
+    background-color: #f4f6f9;
   }
 
-  .section_main {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
 </style>

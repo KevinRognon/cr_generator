@@ -3,14 +3,15 @@
 <template>
 
     <nav>
-        <RouterLink to="/sav">Sav</RouterLink>
-        <RouterLink to="/post-production">Post-Prod</RouterLink>
-        <RouterLink to="/b2b">B2B</RouterLink>
+        <SelectComp label="Intervention" :data="data" ></SelectComp>
     </nav>
     
 </template>
 
-<script></script>
+<script setup>
+    import SelectComp from '../components/SelectComp.vue';
+    import data from '../assets/data_type.json';
+</script>
 
 <style scoped>
 
@@ -27,8 +28,6 @@
         /* gap: 10%; */
 
         margin-bottom: 2rem;
-
-        outline: 5px solid white;
     }
 
     nav a {

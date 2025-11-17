@@ -1,9 +1,8 @@
 <template>
 
     <article>
-        <label for="label">{{ label }}</label>
         <select @change="$emit('onSelectChange')" :name="label" :id="label">
-            <option disabled selected value="">Choisir</option>
+            <option disabled selected value="">{{ label }}</option>
             <option v-for="value in data[0]" :value="value">{{ value }}</option>
         </select>
     </article>

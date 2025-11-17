@@ -3,7 +3,6 @@
     <article>
         <select v-model="choix" name="selection_intervention" @change="type_change" id="selection_intervention">
             <option disabled value="">Choisir</option>
-            <option value="B2B">B2B</option>
             <option value="Sav">Sav</option>
             <option value="Post-Production">Post-Production</option>
         </select>
@@ -28,10 +27,6 @@ import { useRouter } from 'vue-router';
             case "post-production":
                 router.push("/post-production");
                 break;
-            case "b2b":
-                router.push("/b2b");
-                break;
-        
             default:
                 router.push("/");
                 break;
