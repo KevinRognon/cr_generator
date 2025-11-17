@@ -4,11 +4,11 @@
         <hr style="width: 100%;">
         <Select @on-select-change="change_value_abonne" label="Intervention chez abonné" :data="data_sav"/>
         <Signal v-if="valeur_abonne" @on-value="show_pbo_select" />
-        <Select v-if="show_pbo" @on-select-change="show_intervention_pm" label="Intervention PBO" :data="data_pbo"/>
-        <Select v-if="show_pm" @on-select-change="change_value_pm" label="Intervention PM" :data="data_pm"/>
+        <Select @on-select-change="show_intervention_pm" label="Intervention PBO" :data="data_pbo"/>
+        <Select @on-select-change="change_value_pm" label="Intervention PM" :data="data_pm"/>
         <Signal @on-value="show_infos" v-if="valeur_pm"/>
         <Informations @on-submit-infos="infos_submit" v-if="show_info_text" />
-        <GenerateButton v-if="show_generate_button" @on-click="on_generate_clicked" text="Générer" />
+        <GenerateButton @on-click="on_generate_clicked" text="Générer" />
     </section>
     
 </template>
@@ -68,9 +68,20 @@
         }   
     }
 
+    const reset_champs = () => {
+        valeur_abonne.value        = false;
+        show_pbo.value             = false;
+        show_pm.value              = false;
+        valeur_pm.value            = false;
+        show_info_text.value       = false;
+    }
+
     const change_value_abonne = () => {
         event.preventDefault();
         switch (event.target.value) {
+            case "Pas d'intervention nécessaire":
+                valeur_abonne.value = false;
+                break;
             default:
                 valeur_abonne.value = true;
                 break;
@@ -130,6 +141,7 @@
         const jsonString = JSON.stringify(cr.value, null, 2);
         console.log(jsonString);
         navigator.clipboard.writeText(jsonString);
+        reset_champs();
     }
 
 </script>
